@@ -1,0 +1,192 @@
+*:not(.fa-github), *:not(.fa-github)::before, *:not(.fa-github)::after {
+    box-sizing: border-box;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 100;
+}
+
+body {
+    background: linear-gradient(to right, #e44783, #edad67);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+.app-container {
+    width: 225px;
+    height: 450px;
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    padding: .3rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    zoom: 1.2;
+}
+
+.calculator-screen {
+    background-color: #f6f6f6;
+    height: 135px;
+    border-radius: 25px 25px 0 0;
+}
+
+.top-screen {
+    background-color: #f6f6f6;
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.bottom-screen {
+    width: 100%;
+    height: 55%;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 2rem;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.bottom-screen:empty::before{
+    content: '0';
+}
+
+.buttons-container {
+    background-color: white;
+    border-radius: 0 0 25px 25px;
+    width: 100%;
+    height: 305px;
+    display: grid;
+    grid-template-columns: repeat(4, 54px);
+    grid-template-rows: repeat(5, 61px);
+    overflow: hidden;
+}
+
+.buttons-container > div:not(.equals-button) {
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    scale: 1;
+    transition: scale 150ms ease, font-size 150ms ease-out, translate 100ms ease-out;
+    user-select: none;
+
+}
+
+.buttons-container > div:hover:not(.equals-button) {
+    cursor: pointer;
+    scale: 1.3;
+    font-size: 2rem;
+}
+.buttons-container > div:active:not(.equals-button) {
+    translate: 0 10px;
+}
+
+.clear-button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.equals-button {
+    background: linear-gradient(to right, #edad67, #e44783, #00FFCA, #C9A7EB);
+    background-size: 300%;
+    background-position-x: left;
+    color: white;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    border-radius: 25px;
+    height: 60%;
+    width: 90%;
+    justify-self: center;
+    align-self: center;
+    box-shadow: 0px 3px 5px#edad67;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    transition: background 200ms linear,
+                scale 100ms ease,
+                font-size 100ms ease;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+}
+.equals-button:hover {
+    background: linear-gradient(to right, #edad67, #e44783, #00FFCA, #C9A7EB);
+    background-size: 300%;
+    background-position-x: right;
+    scale: 1.1;
+    font-size: 2rem;
+    font-weight: 900;
+    box-shadow: 0px 2px 5px #C9A7EB;
+
+}
+.equals-button:active {
+    translate: 0 5px;
+}
+
+footer > p {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+.author {
+    font-weight: 400;
+}
+.designer {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+.designer > a {
+    font-weight: 400;
+    color: white;
+}
+.fa-github {
+    font-size: 2rem;
+    color: white;
+    transition: all 400ms ease-in-out;
+}
+
+.fa-github:hover{
+    scale: 2;
+    translate: 15px;
+    rotate: 360deg;
+}
+
+@keyframes iconAnimation {
+    0%{
+        rotate: 0deg;
+        translate: 0px;
+    }
+    50%{
+        translate: 0 -40px;
+        scale: 2;
+    }
+    100%{
+        translate: 0px;
+        rotate: -360deg;
+        scale: 1;
+    }
+}
+
+.iconAnimation {
+    animation-name: iconAnimation;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+}
